@@ -8,13 +8,13 @@ import { useEffect, useState } from "react";
 export default function CompanyPage(){
     const { id } = useParams();
 
-    const [companyDetails, setCompanyDetails] = useState(null);
-    const [products, setProducts] = useState([]);
+    const [companyDetails, setCompanyDetails] = useState<any>(null);
+    const [products, setProducts] = useState<any>([]);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [isProductOpen, setIsProductOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<any>(false);
+    const [isProductOpen, setIsProductOpen] = useState<any>(false);
 
-    const [newCompany, setNewCompany] = useState({
+    const [newCompany, setNewCompany] = useState<any>({
         name: "",
         email: "",
         number: "",
@@ -197,12 +197,12 @@ export default function CompanyPage(){
                         Active Products
                     </h3>
 
-                    {products.filter(p => !p.hidden).length === 0 ? (
+                    {products.filter((p:any) => !p.hidden).length === 0 ? (
                         <p>No active products</p>
                     ) : (
                         products
-                            .filter(p => !p.hidden)
-                            .map((p) => (
+                            .filter((p:any) => !p.hidden)
+                            .map((p:any) => (
                                 <Link
                                     key={p.gtin}
                                     href={`/07_module_b/products/${p.gtin}`}
@@ -226,12 +226,12 @@ export default function CompanyPage(){
                         Hidden Products
                     </h3>
 
-                    {products.filter(p => p.hidden).length === 0 ? (
+                    {products.filter((p:any) => p.hidden).length === 0 ? (
                         <p>No hidden products</p>
                     ) : (
                         products
-                            .filter(p => p.hidden)
-                            .map((p) => (
+                            .filter((p: any) => p.hidden)
+                            .map((p: any) => (
                                 <div
                                     key={p.gtin}
                                     className="border p-2 rounded opacity-60"

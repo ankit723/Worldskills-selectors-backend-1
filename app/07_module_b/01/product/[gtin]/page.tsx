@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 export default function ProductPage(){
     const { gtin } = useParams();
 
-    const [product, setProduct] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
+    const [product, setProduct] = useState<any>(null);
+    const [isOpen, setIsOpen] = useState<any>(false);
 
     const [updatedProduct, setUpdatedProduct] = useState({
         name: "",
